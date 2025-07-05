@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const medecinRoutes = require('./routes/medecinRoutes');
+const rdvRoutes = require('./routes/rdvRoutes');
 
 dotenv.config();
 
@@ -23,5 +24,6 @@ app.get('/', (req, res) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/medecins', medecinRoutes);
+app.use('/api/rdvs', rdvRoutes);
 
 module.exports = app;
